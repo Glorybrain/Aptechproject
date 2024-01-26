@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!--======= Header =======-->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="nav_logo">Armstrong</a>
+            
+            <ul class="nav_list">
+                <li class="nav_item">
+                    <a href="{{ url_for('home') }}" class="nav_link">Home</a>
+                </li>
+                
+                <li class="nav_item">
+                    <a href="#" class="nav_link">Contact us</a>
+                </li>
+                
+                <li class="nav_item">
+                    <a href="#" class="nav_link">Settings</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="home section" id="home">
+            <div class="home_container container">
+                <h3 class="home_title">
+                    Generate Armstrong Numbers Online (Armstrong Generator)
+                </h3>
+
+                <div class="home_perfil">
+                    <div class="home_perfil-info">
+                        <p class="text">
+                            Armstrong Number Generator is online tool to 
+                            generate Armstrong numbers in a given range online.
+                        </p>
+
+                        <p class="text">
+                            A number is said to be Armstrong or Narcissistic 
+                            Number if it is equal to the sum of its own digits 
+                            raised to the power of the number of digits in a given 
+                            number.
+                        </p>
+                    </div>
+                    <div class="home_perfil-input">
+                        <form method="post">
+                        <div class="num_content-container">
+                                <div class="num_content">
+                                    <label for="number">From:</label>
+                                    <input type="number" name="num" id="number" class="num">
+                                </div>
+
+                                <div class="num_content">
+                                    <label for="number">To:</label>
+                                    <input type="number" name="num1" id="number" class="num">
+                                </div>
+                        </div>
+                        
+
+                        <div class="btn">
+                            <button type="submit">Generate</button>
+                            <button type="reset">Reset</button>
+                        </div>
+                        </form>
+                        <div class="result">
+                            <h2>These are the Armstrong numbers</h2>
+                            {% if numbers %}
+                            <ul>
+                                {% for num in numbers %}
+                                <li>{{num}}</li>
+                                {% endfor %}
+                            </ul>
+                            {% else %}
+                            <p>There isn't any Armstrong numbers</p>
+
+                            {% endif %}
+<!--                            <table style="width:100%">-->
+<!--                                <tr>-->
+<!--                                    <td>1</td>-->
+<!--                                    <td>2</td>-->
+<!--                                    <td>3</td>-->
+<!--                                    <td>4</td>-->
+<!--                                    <td>5</td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td>6</td>-->
+<!--                                    <td>7</td>-->
+<!--                                    <td>8</td>-->
+<!--                                    <td>9</td>-->
+<!--                                    <td>153</td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td>370</td>-->
+<!--                                    <td>371</td>-->
+<!--                                    <td>407</td>-->
+<!--                                    <td>1634</td>-->
+<!--                                    <td>8208</td>-->
+<!--                                </tr>-->
+<!--                            </table>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer_container container grid">
+            <ul class="footer_links">
+                <li>
+                    <a href="#home" class="footer_link">Home</a>
+                </li>
+
+                <li>
+                    <a href="#services" class="footer_link">Contact us</a>
+                </li>
+
+                <li>
+                    <a href="#projects" class="footer_link">Settings</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

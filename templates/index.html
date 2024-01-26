@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!--======= Header =======-->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="nav_logo">Armstrong</a>
+            
+            <ul class="nav_list">
+                <li class="nav_item">
+                    <a href="#home" class="nav_link">Home</a>
+                </li>
+                
+                <li class="nav_item">
+                    <a href="#" class="nav_link">Contact us</a>
+                </li>
+                
+                <li class="nav_item">
+                    <a href="#" class="nav_link">Settings</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!--======= Main =======-->
+    <main class="main">
+        <section class="home section" id="home">
+            <div class="home_container container">
+                <h3 class="home_title">Check Armstrong Number Online</h3>
+                <p class="home_description">
+                    Armstrong Online Check is online tool to check 
+                    whether a given number is Armstrong or not.
+                </p>
+
+                <div class="home_perfil">
+                    <div class="home_perfil-info">
+                        <p class="text">
+                            A number is said to be Armstrong or Narcissistic 
+                            Number if it is equal to the sum of its own digits 
+                            raised to the power of the number of digits in a 
+                            given number.
+                        </p>
+                        <p class="text">
+                            Armstrong Number Example: number 371 is Armstrong 
+                            number because: 33 + 73 + 13 = 371
+                        </p>
+                        <p class="text">
+                            List of Armstrong Numbers: 1, 2, 3, 4, 5, 6, 7, 8, 
+                            9, 153, 370, 371, 407, 1634, 8208, 9474, 54748, 92727, 
+                            93084, 548834, 1741725, 4210818, 9800817, 9926315, 
+                            24678050, 24678051, 88593477, 146511208, 472335975, 
+                            534494836, 912985153, 4679307774, ...
+                        </p>
+                        <p class="text">
+                            Also try: <a href="/range"><strong>Generate Armstrong Numbers Online</strong></a>
+                        </p>
+                    </div>
+                    <div class="home_perfil-input">
+                        <form method="post">
+                            <label for="number">Enter number</label>
+                            <input type="number" name="number" id="number" class="num">
+                            <div class="btn">
+                                <button type="submit">Check</button>
+                                <button type="reset">Reset</button>
+                            </div>
+                        </form>
+                        <div class="result">
+                            {% if msg %}
+                            {{ msg }}
+                            {% else %}
+                            Input a number
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer_container container grid">
+            <ul class="footer_links">
+                <li>
+                    <a href="#home" class="footer_link">Home</a>
+                </li>
+
+                <li>
+                    <a href="#services" class="footer_link">Contact us</a>
+                </li>
+
+                <li>
+                    <a href="#projects" class="footer_link">Settings</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
